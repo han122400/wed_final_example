@@ -7,6 +7,7 @@ document.querySelectorAll('.card-stack img').forEach((img, idx) => {
   })
   img.addEventListener('mouseleave', () => {
     // 원래 회전 상태로 되돌리기
+    // xptmxm
     const rotations = ['rotate(-5deg)', 'rotate(3deg)', 'rotate(-2deg)']
     img.style.transform = rotations[idx]
   })
