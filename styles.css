@@ -1,0 +1,196 @@
+/* 1. Reset & 기본 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* 2. 헤더 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  transform: scaleX(-1); /* SOAK 로고 뒤집기 */
+}
+.header-icons img {
+  width: 1.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+/* 3. 메인 레이아웃 */
+.container {
+  display: flex;
+  padding: 1rem 2rem;
+  gap: 2%;
+  height: calc(100vh - 120px); /* 헤더 + nav 제외 */
+}
+.panel {
+  border-radius: 12px;
+}
+.left {
+  flex: 3;
+  background-color: #bee4ff;
+  padding: 2rem;
+  position: relative;
+}
+.right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 4. Question of the day */
+.question {
+  margin-bottom: 2rem;
+}
+.question-label {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+.left h1 {
+  font-size: 2rem;
+}
+
+/* 카드 스택 */
+.card-stack {
+  position: relative;
+  width: 100%;
+  height: 60%;
+}
+.card-stack img {
+  position: absolute;
+  width: 60%;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+/* 간단한 회전&이동 */
+.card-stack img:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  transform: rotate(-5deg);
+}
+.card-stack img:nth-child(2) {
+  top: 10%;
+  left: 30%;
+  transform: rotate(3deg);
+  z-index: 2;
+}
+.card-stack img:nth-child(3) {
+  top: 0;
+  left: 40%;
+  transform: rotate(-2deg);
+  z-index: 3;
+}
+
+/* 5. 우측 카드 공통 */
+.card {
+  background-color: #111;
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.card-content {
+  flex: 1;
+}
+.card h2 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+.card p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.card-icon {
+  width: 4rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  opacity: 0.9;
+}
+.btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #0070c9;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* 6. 추천 섹션 */
+.recommend h3 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+.recommend-item {
+  display: flex;
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+.recommend-item img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+}
+.recommend-text {
+  padding: 0.6rem 1rem;
+}
+.recommend-text p {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+.recommend-text span {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* 7. 하단 내비게이션 */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem 0;
+}
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.75rem;
+}
+.bottom-nav img {
+  width: 1.5rem;
+  margin-bottom: 0.2rem;
+}

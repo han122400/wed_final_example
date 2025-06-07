@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">CMD</div>
+      <div class="header-icons">
+        <img src="icons/bell.svg" alt="알림" />
+        <img src="icons/settings.svg" alt="설정" />
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+      <!-- 좌측: Question of the Day -->
+      <section class="panel left">
+        <div class="question">
+          <div class="question-label">Question of the day</div>
+          <h1>전기는 언제부터 사용했을까?</h1>
+        </div>
+        <div class="card-stack">
+          <img src="cards/card1.png" alt="카드1" />
+          <img src="cards/card2.png" alt="카드2" />
+          <img src="cards/card3.png" alt="카드3" />
+        </div>
+      </section>
+
+      <!-- 우측: Sidebar -->
+      <aside class="panel right">
+        <div class="card login-card">
+          <div class="card-content">
+            <h2>로그인하고 SOAK의<br />모든 서비스를 이용해보세요</h2>
+            <button class="btn">로그인</button>
+          </div>
+          <img class="card-icon" src="icons/animals.svg" alt="동물아이콘" />
+        </div>
+
+        <div class="card badge-card">
+          <div class="card-content">
+            <h2>SOAK에서 멸종 위기 동물<br />배지를 만나보세요</h2>
+            <p>미션을 완료하면 멸종 위기 동물 배지를 드려요!</p>
+          </div>
+          <img class="card-icon" src="icons/globe.svg" alt="지구아이콘" />
+        </div>
+
+        <div class="recommend">
+          <h3>SOAK 이달의 추천</h3>
+          <a href="#" class="recommend-item">
+            <img src="thumbs/plant-insect.png" alt="식물과 곤충" />
+            <div class="recommend-text">
+              <p>식물은 어떻게 곤충을 유혹했을까</p>
+              <span>지구환경과학</span>
+            </div>
+          </a>
+        </div>
+      </aside>
+    </main>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+      <a href="#"><img src="icons/home.svg" alt="HOME" /><span>HOME</span></a>
+      <a href="#"
+        ><img src="icons/explore.svg" alt="EXPLORE" /><span>EXPLORE</span></a
+      >
+      <a href="#"
+        ><img src="icons/category.svg" alt="CATEGORY" /><span>CATEGORY</span></a
+      >
+      <a href="#"
+        ><img src="icons/mysoak.svg" alt="MY SOAK" /><span>MY SOAK</span></a
+      >
+    </nav>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
