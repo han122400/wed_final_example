@@ -8,12 +8,24 @@
 }
 html,
 body {
-  height: 100%;
+  height: 100vh;
 }
 body {
-  background-color: #000;
+  background-color: #222222;
+  background-image: url('img/main2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #fff;
   overflow-x: hidden;
+  min-height: 100vh;
+  max-height: 100vh;
+  height: 100vh;
+  overflow-y: auto;
+}
+html {
+  height: 100vh;
+  overflow-y: auto;
 }
 
 /* 2. 헤더 */
@@ -21,166 +33,137 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 16px 32px;
 }
 .logo {
-  font-size: 1.8rem;
+  font-size: 29px;
   font-weight: bold;
-  transform: scaleX(-1); /* SOAK 로고 뒤집기 */
-}
-.header-icons img {
-  width: 1.5rem;
-  margin-left: 1rem;
-  cursor: pointer;
 }
 
 /* 3. 메인 레이아웃 */
 .container {
   display: flex;
-  padding: 1rem 2rem;
-  gap: 2%;
-  height: calc(100vh - 120px); /* 헤더 + nav 제외 */
+  padding: 16px 32px;
+  gap: 200px;
+  height: calc(100% - 130px); /* 헤더 + nav 제외 */
+  margin-top: 80px; /* 네비게이션 높이만큼 아래로 */
+  max-height: calc(100vh - 130px);
+  overflow-y: auto;
 }
 .panel {
   border-radius: 12px;
 }
 .left {
   flex: 3;
-  background-color: #bee4ff;
-  padding: 2rem;
+  background-color: rgb(36, 36, 36);
+  padding: 32px;
   position: relative;
 }
 .right {
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 /* 4. Question of the day */
 .question {
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 }
 .question-label {
-  font-size: 0.9rem;
+  font-size: 14px;
   opacity: 0.7;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 .left h1 {
-  font-size: 2rem;
+  font-size: 32px;
 }
 
-/* 카드 스택 */
-.card-stack {
-  position: relative;
-  width: 100%;
-  height: 60%;
-}
-.card-stack img {
-  position: absolute;
-  width: 60%;
-  max-width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-/* 간단한 회전&이동 */
-.card-stack img:nth-child(1) {
-  top: 20%;
-  left: 20%;
-  transform: rotate(-5deg);
-}
-.card-stack img:nth-child(2) {
-  top: 10%;
-  left: 30%;
-  transform: rotate(3deg);
-  z-index: 2;
-}
-.card-stack img:nth-child(3) {
-  top: 0;
-  left: 40%;
-  transform: rotate(-2deg);
-  z-index: 3;
-}
-
-/* 5. 우측 카드 공통 */
+/* 5. 우측 카드 공통 - card 하나로 통일 */
 .card {
   background-color: #111;
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 24px;
   position: relative;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 0;
+  width: 100%;
 }
 .card-content {
-  flex: 1;
+  width: 100%;
 }
-.card h2 {
-  font-size: 1.1rem;
+.card h2,
+.card h3 {
+  font-size: 18px;
   line-height: 1.4;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
-.card p {
-  font-size: 0.9rem;
+.card p,
+.card span {
+  font-size: 14px;
   opacity: 0.8;
 }
-.card-icon {
-  width: 4rem;
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  opacity: 0.9;
+.card .btn {
+  margin-top: 8px;
 }
-.btn {
-  padding: 0.6rem 1.2rem;
-  background-color: #0070c9;
-  border: none;
-  border-radius: 6px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-/* 6. 추천 섹션 */
-.recommend h3 {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
+.recommend {
+  width: 100%;
 }
 .recommend-item {
   display: flex;
-  background-color: #222;
+  align-items: center;
+  background: none;
   border-radius: 8px;
-  overflow: hidden;
   text-decoration: none;
   color: inherit;
+  padding: 0;
+  box-shadow: none;
+  margin: 0;
 }
 .recommend-item img {
-  width: 4rem;
-  height: 4rem;
+  width: 48px;
+  height: 48px;
   object-fit: cover;
+  border-radius: 8px;
+  margin-right: 12px;
 }
 .recommend-text {
-  padding: 0.6rem 1rem;
+  padding: 0;
 }
 .recommend-text p {
-  font-size: 0.95rem;
-  margin-bottom: 0.3rem;
+  font-size: 15px;
+  margin-bottom: 5px;
 }
 .recommend-text span {
-  font-size: 0.8rem;
+  font-size: 13px;
   opacity: 0.7;
 }
 
-/* 7. 하단 내비게이션 */
-.bottom-nav {
+/* 7. 내비게이션 */
+.nav {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  background-color: #111;
+  z-index: 1000;
+  background: #3d227b00;
   display: flex;
   justify-content: space-around;
-  padding: 0.8rem 0;
+  padding: 18px 0;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+}
+.nav .logo {
+  font-size: 29px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  margin-right: 32px;
 }
 .bottom-nav a {
   display: flex;
@@ -188,9 +171,23 @@ body {
   align-items: center;
   text-decoration: none;
   color: inherit;
-  font-size: 0.75rem;
+  font-size: 12px;
 }
-.bottom-nav img {
-  width: 1.5rem;
-  margin-bottom: 0.2rem;
+.nav a {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 8px 22px;
+  border-radius: 20px;
+  margin: 0 6px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0);
+  backdrop-filter: blur(40px);
+}
+.nav a:hover,
+.nav a:focus {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffe9ff;
+  box-shadow: 0 4px 16px 0 rgba(108, 56, 233, 0.18);
 }
