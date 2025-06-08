@@ -43,8 +43,10 @@ html {
 /* 3. 메인 레이아웃 */
 .container {
   display: flex;
-  padding: 16px 32px;
-  gap: 200px;
+  padding: 16px 0;
+  gap: 50px;
+  max-width: 95vw;
+  margin: 80px auto 0;
   height: calc(100% - 130px); /* 헤더 + nav 제외 */
   margin-top: 80px; /* 네비게이션 높이만큼 아래로 */
   max-height: calc(100vh - 130px);
