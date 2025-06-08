@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -10,10 +11,10 @@
     <!-- NAV -->
     <nav class="nav">
       <div class="logo">CMD</div>
-      <a href="index.html">HOME</a>
-      <a href="team.html">TEAM</a>
-      <a href="skill.html">SKILL</a>
-      <a href="forum.html">FORUM</a>
+      <a href="index.html" class="nav-link">HOME</a>
+      <a href="team.html" class="nav-link">TEAM</a>
+      <a href="skill.html" class="nav-link">SKILL</a>
+      <a href="note.html" class="nav-link">MYPAGE</a>
     </nav>
 
     <!-- MAIN CONTENT -->
@@ -22,7 +23,14 @@
       <section class="panel left">
         <div class="question">
           <div class="question-label">Question of the day</div>
-          <h1>ai?</h1>
+          <section id="home" class="hero">
+            <div class="hero-content">
+              <!-- 타이핑 텍스트가 채워지는 영역 -->
+              <h1 id="typing1"></h1>
+              <h1 id="typing2"></h1>
+              <p id="typing3"></p>
+            </div>
+          </section>
         </div>
       </section>
 
@@ -31,25 +39,25 @@
         <div class="card">
           <div class="card-content">
             <h2>로그인하고<br />모든 서비스를 이용해보세요</h2>
-            <button class="btn"><a href="login.html">로그인</a></button>
+            <button class="btn" onclick="locate_Login()">로그인</button>
           </div>
         </div>
 
         <div class="card">
           <div class="card-content">
             <h2>게시판<br />로그인 후 이용해주세요</h2>
-            <p>김서진</p>
+            <p>테스트 문구</p>
           </div>
         </div>
 
         <div class="card">
           <div class="card-content">
-            <h3>SOAK 이달의 추천</h3>
+            <h3>테스트 문구</h3>
             <a href="#" class="recommend-item">
-              <img src="thumbs/plant-insect.png" alt="식물과 곤충" />
+              <img src="thumbs/plant-insect.png" alt="테스트 사진" />
               <div class="recommend-text">
-                <p>식물은 어떻게 곤충을 유혹했을까</p>
-                <span>박한빈ㅄ</span>
+                <p>테스트 문구</p>
+                <span>테스트 문구</span>
               </div>
             </a>
           </div>

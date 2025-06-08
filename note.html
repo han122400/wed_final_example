@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="logo">CMD</div>
+      <a href="index.html">HOME</a>
+      <a href="team.html">TEAM</a>
+      <a href="skill.html">SKILL</a>
+      <a href="note.html">MYPAGE</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+      <!-- 좌측: Question of the Day -->
+      <section class="panel left">
+        <div class="question">
+          <div class="question-label">Question of the day</div>
+          <h1>노트</h1>
+        </div>
+        <!-- 다이어리(달력) 영역 -->
+        <div id="diary-calendar" class="diary-calendar"></div>
+      </section>
+      <!-- 우측: TODO 리스트 영역 (날짜 클릭 시 표시) -->
+      <section class="panel right">
+        <div id="todo-modal" class="todo-modal">
+          <div class="todo-header">
+            <span id="selected-date"></span>
+            <button id="close-modal" class="btn" style="float:right;">닫기</button>
+          </div>
+          <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="할 일을 입력하세요" required />
+            <button type="submit" class="btn">추가</button>
+          </form>
+          <ul id="todo-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="note.js" defer></script>
+  </body>
+</html>
