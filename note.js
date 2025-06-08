@@ -26,11 +26,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var daysInMonth = lastDay.getDate();
     // 요일 헤더
     var weekDays = ['일', '월', '화', '수', '목', '금', '토'];
-    weekDays.forEach(function(d) {
+    weekDays.forEach(function(d, i) {
       var wd = document.createElement('div');
       wd.textContent = d;
       wd.style.fontWeight = 'bold';
       wd.style.opacity = '0.7';
+      wd.className = 'calendar-weekday';
+      if (i === 0) wd.classList.add('sun');
+      if (i === 6) wd.classList.add('sat');
       calendar.appendChild(wd);
     });
     // 빈칸
@@ -42,6 +45,9 @@ document.addEventListener('DOMContentLoaded', function () {
     for (var d = 1; d <= daysInMonth; d++) {
       var day = document.createElement('div');
       day.className = 'diary-day';
+      var weekDay = new Date(year, month, d).getDay();
+      if (weekDay === 0) day.classList.add('sun');
+      if (weekDay === 6) day.classList.add('sat');
       day.textContent = d;
       var monthStr = (month + 1 < 10 ? '0' : '') + (month + 1);
       var dayStr = (d < 10 ? '0' : '') + d;

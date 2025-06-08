@@ -74,8 +74,8 @@ html {
   margin-bottom: 32px;
 }
 .question-label {
-  font-size: 14px;
-  opacity: 0.7;
+  font-size: 20px;
+  opacity: 0.8;
   margin-bottom: 8px;
 }
 .left h1 {
@@ -400,6 +400,12 @@ a:hover {
   60% { transform: scale(1.22); }
   100% { transform: scale(1.18); }
 }
+.diary-day.sat, .diary-day.sun {
+  color: #ff4d4d !important;
+}
+.calendar-weekday.sat, .calendar-weekday.sun {
+  color: #ff4d4d !important;
+}
 
 /* TODO 모달 스타일 */
 .todo-modal {
@@ -409,8 +415,8 @@ a:hover {
   border-radius: 12px;
   padding: 28px 24px 24px 24px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.18);
-  min-width: 320px;
-  min-height: 340px;
+  min-width: 400px;
+  min-height: 400px;
   max-width: 420px;
   margin: 0 auto;
   position: relative;

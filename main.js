@@ -62,50 +62,59 @@ function locate_Login() {
   window.location.href = 'login.html'
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // 순차 타이핑
-  const t1 = document.getElementById('typing1')
-  const t2 = document.getElementById('typing2')
-  const t3 = document.getElementById('typing3')
-  typeWriter(t1, '안녕하세요', 120, () => {
-    setTimeout(() => {
-      typeWriter(t2, '이제혁 홈페이지 입니다.', 80, () => {
-        setTimeout(() => {
-          typeWriter(t3, '92212996 이제혁', 80)
-        }, 300)
-      })
-    }, 300)
-  })
-
-  // 로그인 상태에 따라 우측 카드 텍스트 변경
-  const loginUser = sessionStorage.getItem('loginUser')
-  const loginCard = document.querySelector('.right .card .card-content h2')
-  const loginBtn = document.querySelector('.right .card .card-content .btn')
-  if (loginUser && loginCard) {
-    loginCard.innerHTML = `<span style="font-size:22px;">${loginUser}님 안녕하세요!</span>`
-    if (loginBtn) loginBtn.style.display = 'none'
-  }
-
-  // 3) 스크롤 위치 기반 nav active 토글
-  const secs = Array.from(document.querySelectorAll('section[id]'))
-  const links = Array.from(document.querySelectorAll('.nav-link'))
-
-  function updateNav() {
-    const centerY = window.scrollY + window.innerHeight / 2
-    let activeId = secs[0].id
-    for (const s of secs) {
-      if (centerY >= s.offsetTop) activeId = s.id
-      else break
+// 1) 타입라이터 함수
+function typeWriter(el, text, speed, callback) {
+  let i = 0;
+  el.textContent = '';
+  const timer = setInterval(() => {
+    if (i < text.length) {
+      el.textContent += text.charAt(i++);
+    } else {
+      clearInterval(timer);
+      if (callback) callback();
     }
-    links.forEach((a) => {
-      a.classList.toggle('active', a.getAttribute('href') === `#${activeId}`)
-    })
-  }
-  window.addEventListener('scroll', updateNav)
-  updateNav()
+  }, speed);
+}
 
-  // 4) nav 클릭 시 모바일 메뉴만 닫기
-  links.forEach((a) => {
-    a.addEventListener('click', () => navMenu.classList.remove('active'))
-  })
-})
+// 2) DOMContentLoaded 에서 타이핑 + 네비게이션 로직 실행
+document.addEventListener('DOMContentLoaded', () => {
+  // 로그인 상태에 따라 우측 카드 텍스트 변경
+  const loginUser = sessionStorage.getItem('loginUser');
+  const cardEls = document.querySelectorAll('.card');
+  if (loginUser && cardEls.length > 0) {
+    // 첫 번째 카드의 h2 텍스트 변경
+    const h2 = cardEls[0].querySelector('h2');
+    if (h2) {
+      h2.textContent = `${loginUser}님 안녕하세요!`;
+      h2.style.color = '#fff';
+      h2.style.fontSize = '22px';
+    }
+    // 로그인 버튼 숨기기
+    const btn = cardEls[0].querySelector('.btn');
+    if (btn) btn.style.display = 'none';
+    // 로그아웃 버튼 추가 (없을 때만)
+    if (!cardEls[0].querySelector('.logout-btn')) {
+      const logoutBtn = document.createElement('button');
+      logoutBtn.className = 'btn logout-btn';
+      logoutBtn.textContent = '로그아웃';
+      logoutBtn.style.marginTop = '10px';
+      logoutBtn.onclick = Logout;
+      cardEls[0].querySelector('.card-content').appendChild(logoutBtn);
+    }
+  }
+
+  // 타이핑 이펙트
+  const t1 = document.getElementById('typing1');
+  const t2 = document.getElementById('typing2');
+  const t3 = document.getElementById('typing3');
+
+  typeWriter(t1, '기말', 120, () => {
+    setTimeout(() => {
+      typeWriter(t2, 'CMD 팀플 페이지.', 80, () => {
+        setTimeout(() => {
+          typeWriter(t3, 'A+ 받아야지', 80);
+        }, 300);
+      });
+    }, 300);
+  });
+});
