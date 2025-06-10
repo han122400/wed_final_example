@@ -64,57 +64,63 @@ function locate_Login() {
 
 // 1) 타입라이터 함수
 function typeWriter(el, text, speed, callback) {
-  let i = 0;
-  el.textContent = '';
+  let i = 0
+  el.textContent = ''
   const timer = setInterval(() => {
     if (i < text.length) {
-      el.textContent += text.charAt(i++);
+      el.textContent += text.charAt(i++)
     } else {
-      clearInterval(timer);
-      if (callback) callback();
+      clearInterval(timer)
+      if (callback) callback()
     }
-  }, speed);
+  }, speed)
 }
 
 // 2) DOMContentLoaded 에서 타이핑 + 네비게이션 로직 실행
 document.addEventListener('DOMContentLoaded', () => {
-  // 로그인 상태에 따라 우측 카드 텍스트 변경
-  const loginUser = sessionStorage.getItem('loginUser');
-  const cardEls = document.querySelectorAll('.card');
-  if (loginUser && cardEls.length > 0) {
-    // 첫 번째 카드의 h2 텍스트 변경
-    const h2 = cardEls[0].querySelector('h2');
-    if (h2) {
-      h2.textContent = `${loginUser}님 안녕하세요!`;
-      h2.style.color = '#fff';
-      h2.style.fontSize = '22px';
-    }
-    // 로그인 버튼 숨기기
-    const btn = cardEls[0].querySelector('.btn');
-    if (btn) btn.style.display = 'none';
-    // 로그아웃 버튼 추가 (없을 때만)
-    if (!cardEls[0].querySelector('.logout-btn')) {
-      const logoutBtn = document.createElement('button');
-      logoutBtn.className = 'btn logout-btn';
-      logoutBtn.textContent = '로그아웃';
-      logoutBtn.style.marginTop = '10px';
-      logoutBtn.onclick = Logout;
-      cardEls[0].querySelector('.card-content').appendChild(logoutBtn);
+  // index.html에서만 로그인 상태에 따라 우측 카드 텍스트 변경
+  if (
+    window.location.pathname.endsWith('index.html') ||
+    window.location.pathname === '/' ||
+    window.location.pathname === '/index.html'
+  ) {
+    const loginUser = sessionStorage.getItem('loginUser')
+    const cardEls = document.querySelectorAll('.card')
+    if (loginUser && cardEls.length > 0) {
+      // 첫 번째 카드의 h2 텍스트 변경
+      const h2 = cardEls[0].querySelector('h2')
+      if (h2) {
+        h2.textContent = `${loginUser}님 안녕하세요!`
+        h2.style.color = '#fff'
+        h2.style.fontSize = '22px'
+      }
+      // 로그인 버튼 숨기기
+      const btn = cardEls[0].querySelector('.btn')
+      if (btn) btn.style.display = 'none'
+      // 로그아웃 버튼 추가 (없을 때만)
+      if (!cardEls[0].querySelector('.logout-btn')) {
+        const logoutBtn = document.createElement('button')
+        logoutBtn.className = 'btn logout-btn'
+        logoutBtn.textContent = '로그아웃'
+        logoutBtn.style.marginTop = '10px'
+        logoutBtn.onclick = Logout
+        cardEls[0].querySelector('.card-content').appendChild(logoutBtn)
+      }
     }
   }
 
   // 타이핑 이펙트
-  const t1 = document.getElementById('typing1');
-  const t2 = document.getElementById('typing2');
-  const t3 = document.getElementById('typing3');
+  const t1 = document.getElementById('typing1')
+  const t2 = document.getElementById('typing2')
+  const t3 = document.getElementById('typing3')
 
   typeWriter(t1, '기말', 120, () => {
     setTimeout(() => {
       typeWriter(t2, 'CMD 팀플 페이지.', 80, () => {
         setTimeout(() => {
-          typeWriter(t3, 'A+ 받아야지', 80);
-        }, 300);
-      });
-    }, 300);
-  });
-});
+          typeWriter(t3, 'A+ 받아야지', 80)
+        }, 300)
+      })
+    }, 300)
+  })
+})

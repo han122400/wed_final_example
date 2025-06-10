@@ -18,15 +18,85 @@
 
     <!-- MAIN CONTENT -->
     <main class="container">
-      <!-- 좌측: Question of the Day -->
+      <!-- 좌측: HTML/CSS/JS 설명 -->
       <section class="panel left">
-        <div class="question">
-          <div class="question-label">Question of the day</div>
-          <h1>ai?</h1>
+        <div class="card skill-card">
+          <div class="skill-img-col">
+            <img
+              src="img/html.png"
+              alt="HTML"
+              style="width: 60px; height: 60px; margin-bottom: 10px"
+            />
+            <h2>HTML</h2>
+          </div>
+          <div class="skill-text-col">
+            <p>
+              웹 페이지의 구조를 설계하는 마크업 언어입니다. 각 요소의 배치와
+              의미를 정의합니다.
+            </p>
+          </div>
+        </div>
+        <div class="card skill-card">
+          <div class="skill-img-col">
+            <img
+              src="img/css.png"
+              alt="CSS"
+              style="width: 60px; height: 60px; margin-bottom: 10px"
+            />
+            <h2>CSS</h2>
+          </div>
+          <div class="skill-text-col">
+            <p>
+              HTML로 만든 구조에 디자인을 입히는 스타일 언어입니다. 색상,
+              레이아웃, 애니메이션 등을 담당합니다.
+            </p>
+          </div>
+        </div>
+        <div class="card skill-card">
+          <div class="skill-img-col">
+            <img
+              src="img/js.png"
+              alt="JS"
+              style="width: 60px; height: 60px; margin-bottom: 10px"
+            />
+            <h2>JavaScript</h2>
+          </div>
+          <div class="skill-text-col">
+            <p>
+              웹 페이지에 동적인 기능을 추가하는 프로그래밍 언어입니다.
+              사용자와의 상호작용을 구현합니다.
+            </p>
+          </div>
         </div>
       </section>
 
-      </div>
+      <!-- 우측: AI 도구 설명 -->
+      <section class="panel right">
+        <div class="card right-skill-card">
+          <img
+            src="img/gitcopilot.png"
+            alt="GitHub Copilot"
+            style="width: 120px; height: 60px; margin-bottom: 10px"
+          />
+          <h2>GitHub Copilot</h2>
+          <p>
+            AI 기반 코드 자동완성 도구로, 개발자가 코드를 더 빠르고 효율적으로
+            작성할 수 있도록 도와줍니다.
+          </p>
+        </div>
+        <div class="card right-skill-card">
+          <img
+            src="img/chatgpt.png"
+            alt="ChatGPT"
+            style="width: 60px; height: 60px; margin-bottom: 10px"
+          />
+          <h2>ChatGPT</h2>
+          <p>
+            자연어 처리 AI로, 코드 설명, 오류 해결, 아이디어 제안 등 다양한 개발
+            지원을 제공합니다.
+          </p>
+        </div>
+      </section>
     </main>
 
     <script src="main.js" defer></script>
