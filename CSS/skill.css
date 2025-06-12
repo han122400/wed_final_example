@@ -68,3 +68,11 @@
     font-size: 0.95rem;
   }
 }
+.container {
+  max-width: 1400px; /* 필요에 따라 1200~1400px 등으로 조정 */
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+  padding: 40px 16px;
+  box-sizing: border-box;
+}
