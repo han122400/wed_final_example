@@ -100,8 +100,10 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   display: flex;
   flex-direction: column;
-
   color: #111;
+  max-height: 80vh;
+  align-items: center;
+  overflow-y: auto;
 }
 .close-btn {
   position: absolute;
@@ -120,7 +122,9 @@
   height: 200px;
   object-fit: contain;
   margin-bottom: 18px;
-  margin-left: 35%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .container {
   display: flex;
@@ -131,4 +135,20 @@
   max-width: calc(100vw - 40px);
   margin: 80px auto;
   box-sizing: border-box;
+}
+.modal-box {
+  border: 2px solid #bdbdbd;
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin: 24px auto 0 auto;
+  background: #fafaff;
+  max-width: 90%;
+  text-align: center;
+  font-size: 1.15rem;
+  color: #222;
+  box-shadow: 0 2px 12px rgba(61, 34, 123, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
