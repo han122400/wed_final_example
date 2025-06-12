@@ -43,15 +43,16 @@ html {
 /* 3. 메인 레이아웃 */
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* 세로로 쌓기 */
+  align-items: center; /* 가운데 정렬 */
   padding: 16px 0;
-  gap: 50px;
-  max-width: 95vw;
+  gap: 40px;
+  max-width: 1200px;
   margin: 80px auto 0;
-  height: calc(100% - 130px); /* 헤더 + nav 제외 */
-  margin-top: 80px; /* 네비게이션 높이만큼 아래로 */
-  max-height: calc(100vh - 130px);
-  overflow-y: auto;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  overflow: visible;
 }
 .panel {
   border-radius: 12px;
@@ -201,11 +202,11 @@ html {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  padding: 32px 0;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  padding: 0;
+  width: 100%;
+  position: static;
+  left: unset;
+  transform: unset;
 }
 
 .team-card {
@@ -637,4 +638,53 @@ a:hover {
 .skill-text-col p {
   margin: 0;
   font-size: 15px;
+}
+
+/* 팀 카드 와이드 버전 스타일 추가 */
+.team-card-wide {
+  display: flex;
+  align-items: center;
+  background: rgba(18, 17, 34, 0.92); /* 아래 카드와 비슷한 반투명 배경 */
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  padding: 40px 36px;
+  margin: 40px auto 32px auto;
+  gap: 36px;
+  width: 100%;
+  max-width: 1200px;
+  color: #fff; /* 텍스트 색상도 맞춤 */
+}
+
+.team-photo-wide {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #222;
+}
+
+.team-info-wide h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.team-info-wide p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .team-card-wide {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 12px;
+    gap: 16px;
+  }
+  .team-photo-wide {
+    width: 80px;
+    height: 80px;
+  }
 }
