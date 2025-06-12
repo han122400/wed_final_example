@@ -100,7 +100,7 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   color: #111;
 }
 .close-btn {
@@ -120,6 +120,7 @@
   height: 200px;
   object-fit: contain;
   margin-bottom: 18px;
+  margin-left: 35%;
 }
 .container {
   display: flex;
