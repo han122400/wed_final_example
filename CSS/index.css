@@ -1,0 +1,15 @@
+/* =====================[ index.html 전용 스타일 ]===================== */
+/* 메인 레이아웃, 카드, 우측 패널 등 index.html에서만 쓰는 스타일 */
+
+/* 4. Question of the day */
+.question {
+  margin-bottom: 32px;
+}
+.question-label {
+  font-size: 20px;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+.left h1 {
+  font-size: 32px;
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/CSS/note.css" />
   </head>
   <body>
     <!-- NAV -->
@@ -32,10 +33,17 @@
         <div id="todo-modal" class="todo-modal">
           <div class="todo-header">
             <span id="selected-date"></span>
-            <button id="close-modal" class="btn" style="float:right;">닫기</button>
+            <button id="close-modal" class="btn" style="float: right">
+              닫기
+            </button>
           </div>
           <form id="todo-form">
-            <input type="text" id="todo-input" placeholder="할 일을 입력하세요" required />
+            <input
+              type="text"
+              id="todo-input"
+              placeholder="할 일을 입력하세요"
+              required
+            />
             <button type="submit" class="btn">추가</button>
           </form>
           <ul id="todo-list"></ul>
