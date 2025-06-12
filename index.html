@@ -88,15 +88,103 @@
         <span class="close-btn">&times;</span>
         <img src="img/deep-learning.png" alt="AI1" class="modal-img" />
         <h2>Deep Learning</h2>
-        <br />
-        <br />
-        <p>
+        <p class="modal-text-main">
           <b>Deep Learning 개념: </b> 인간의 뇌 구조를 모방한 인공 신경망을
-          사용하여 대량의 데이터를 학습하고 복잡한 패턴을 인식하는 기술을 말합니다.
+          사용하여 대량의 데이터를 학습하고 복잡한 패턴을 인식하는 기술을
+          말합니다. → 주로 컴퓨터 비전, 자연어 처리, 음성인식 등에 적용
         </p>
         <div class="modal-box">
-          여기에 원하는 내용을 입력하세요!<br />
-          (이 박스를 복사해서 다른 모달에도 쓸 수 있습니다)
+          <h2>딥러닝의 주요 구성 요소</h2>
+          <br />
+          <ol>
+            <li>
+              <strong>신경망 구조</strong>
+              <ul>
+                <li>입력층: 데이터 입력(예: 이미지 픽셀, 텍스트 임베딩)</li>
+                <li>
+                  은닉층: 다층 구조로 특징 추출, 깊은 층일수록 복잡한 패턴 학습
+                </li>
+                <li>출력층: 예측 결과 출력(예: 클래스 확률)</li>
+                <li>가중치/편향: 학습 중 조정되는 연결 강도</li>
+              </ul>
+            </li>
+            <br />
+            <li>
+              <strong>활성화 함수</strong>
+              <ul>
+                <li>비선형성 추가(예: ReLU, Sigmoid, Softmax)</li>
+                <li>복잡한 데이터 패턴 학습 지원</li>
+              </ul>
+            </li>
+            <br />
+            <li>
+              <strong>손실 함수와 최적화</strong>
+              <ul>
+                <li>
+                  손실 함수: 예측과 실제 값의 오차 측정(예: MSE, 크로스
+                  엔트로피)
+                </li>
+                <li>최적화: 경사하강법, Adam 등으로 가중치 업데이트</li>
+              </ul>
+            </li>
+            <br />
+            <li>
+              <strong>백프로퍼게이션</strong>
+              <ul>
+                <li>오차를 역전파해 가중치 조정</li>
+                <li>체인 룰로 각 층의 기여도 계산</li>
+              </ul>
+            </li>
+            <br />
+            <li>
+              <strong>정규화</strong>
+              <ul>
+                <li>드롭아웃, 배치 정규화로 과적합 방지</li>
+                <li>데이터 증강으로 데이터 다양성 확보</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+        <div class="modal-box">
+          <h3>⚙️ 딥러닝의 동작 원리</h3>
+          <br />
+          <ol>
+            <li>데이터 입력 및 전처리(정규화, 토큰화 등)</li>
+            <li>순전파로 예측 생성, 손실 계산</li>
+            <li>역전파로 가중치 업데이트, 반복 학습</li>
+            <li>학습된 모델로 새로운 데이터 예측(추론)</li>
+          </ol>
+        </div>
+        <div class="modal-box">
+          <h3>🖥️ 주요 아키텍처</h3>
+          <br />
+          <ol>
+            <li>
+              <strong>CNN(합성곱 신경망)</strong>: 이미지 처리(예: ResNet,
+              이미지 분류)
+            </li>
+            <li>
+              <strong>RNN(순환 신경망)</strong>: 시퀀스 데이터(예: LSTM, 음성
+              인식)
+            </li>
+            <li>
+              <strong>Transformer</strong>: NLP에 혁신(예: BERT, 텍스트 생성)
+            </li>
+            <li><strong>GAN</strong>: 생성 모델(예: 이미지 생성)</li>
+            <li><strong>확산 모델</strong>: 고품질 콘텐츠 생성(예: DALL·E)</li>
+          </ol>
+        </div>
+        <div class="modal-box">
+          <h3>📱 응용 분야</h3>
+          <br />
+          <ol>
+            <li>
+              <strong>컴퓨터 비전</strong>: 이미지 분류, 객체 탐지(예: 자율주행)
+            </li>
+            <li><strong>자연어 처리</strong>: 번역, 챗봇(예: ChatGPT)</li>
+            <li><strong>음성 처리</strong>: 음성 인식, 합성(예: Siri)</li>
+            <li><strong>의료/금융</strong>: 질병 진단, 사기 탐지</li>
+          </ol>
         </div>
       </div>
     </div>
@@ -104,51 +192,68 @@
       <div class="modal-content">
         <span class="close-btn">&times;</span>
         <img src="img/chat-gpt.png" alt="AI2" class="modal-img" />
-        <h2>생성형 AI</h2>
+        <h2>생성형 AI (Generative AI)</h2>
         <p>
-          생성형 AI(Generative AI)는 새로운 콘텐츠를 생성할 수 있는 인공지능
-          기술을 말합니다. 단순히 정답을 고르거나 기존 데이터를 분류하는 것이
-          아니라, 새로운 텍스트, 이미지, 음악, 코드 등 다양한 형태의 데이터를
-          만들어내는 능력이 특징입니다.<br />
-          <h2>🔹 생성형 AI의 정의</h2>
-          입력 데이터를 바탕으로 새로운 결과물을 ‘생성’하는 인공지능 기술
-          <br />예:
-          <br />
-          	•	“고양이에 대해 시를 써줘” → 📝 새로운 시 생성
-            <br />
-            	•	“우주 배경에 로봇이 있는 그림을 그려줘” → 🖼️ 이미지 생성
-              <br />
-              	•	“웹사이트 코드를 짜줘” → 💻 코드 생성
-                <h2>🔹 어떻게 동작하나? (기술적 기반)</h2>
-                <h3>1.	딥러닝 기반 모델 사용</h1>
-                •	대량의 데이터를 학습<br />
-                •	예: GPT는 수십억 문서를 학습해서 언어 패턴을 익힘
-                <h3 >2.	Transformer 아키텍처</h1>
-                •	문맥을 이해하고 긴 문장도 처리 가능<br />
-                •	예: GPT, BERT 등 최신 모델들이 이 구조를 사용
-                <h3>3.	사전 학습 + 파인튜닝</h1>
-                •	먼저 일반적인 데이터로 학습한 후, 특정 작업에 맞게 추가 학습<br />
-                <h2>🔹 장점과 한계</h2>
-                <h3>장점</h3>
-                •다양한 콘텐츠를 빠르게 생성
-                <br />
-                •사람처럼 자연스러운 결과
-                <br />
-                •특정 작업 자동화 가능
-                <h3>한계</h3>
-                •허위 정보 생성 가능성
-                <br />
-                •저작권, 윤리 이슈
-                <br />•사실과 다른 내용도 그럴듯하게 표현
-                <h3>🔹 생성형 AI의 미래 전망</h3>
-                	•	더욱 사람 같은 대화와 표현 가능
-                <br />
-                	•	멀티모달 생성 강화 (텍스트 + 이미지 + 오디오 동시 생성)
-                <br />
-                	•	콘텐츠 제작 도구로 보편화
-                <br />
-                	•	규제와 윤리 기준도 함께 발전해야 함
+          생성형 AI는 입력된 데이터를 바탕으로
+          <strong>새로운 콘텐츠를 생성</strong>하는 인공지능 기술입니다. 단순
+          분류가 아닌, <em>텍스트, 이미지, 음악, 코드 등</em> 다양한 형태의
+          결과물을 만들어냅니다.
         </p>
+
+        <div class="modal-box">
+          <h3>📌 예시</h3>
+          <ul>
+            <li>“고양이에 대해 시를 써줘” → 📝 새로운 시 생성</li>
+            <li>“우주 배경에 로봇이 있는 그림을 그려줘” → 🖼️ 이미지 생성</li>
+            <li>“웹사이트 코드를 짜줘” → 💻 코드 생성</li>
+          </ul>
+        </div>
+
+        <div class="modal-box">
+          <h3>⚙️ 어떻게 동작할까?</h3>
+          <ol>
+            <li>
+              <strong>딥러닝 기반 모델</strong>: 대량의 데이터를 학습 (예: GPT
+              시리즈)
+            </li>
+            <li>
+              <strong>Transformer 아키텍처</strong>: 문맥을 파악하고 긴 텍스트도
+              처리 가능
+            </li>
+            <li>
+              <strong>사전 학습 + 파인튜닝</strong>: 일반 학습 후 특정 분야로
+              추가 학습
+            </li>
+          </ol>
+        </div>
+
+        <div class="modal-box">
+          <h3>✅ 장점</h3>
+          <ul>
+            <li>다양한 콘텐츠를 빠르게 생성</li>
+            <li>사람처럼 자연스러운 결과</li>
+            <li>자동화로 업무 효율성 향상</li>
+          </ul>
+        </div>
+
+        <div class="modal-box">
+          <h3>⚠️ 한계</h3>
+          <ul>
+            <li>허위 정보 생성 가능성</li>
+            <li>편향된 학습 데이터 문제</li>
+            <li>저작권, 윤리적 논란</li>
+          </ul>
+        </div>
+
+        <div class="modal-box">
+          <h3>🚀 미래 전망</h3>
+          <ul>
+            <li>더욱 정교한 대화와 창작 가능</li>
+            <li>멀티모달 AI (텍스트+이미지+오디오)로 확장</li>
+            <li>콘텐츠 제작의 대중화</li>
+            <li>AI 윤리 및 규제 기준 정립 필요</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div id="modal-ai3" class="modal">

@@ -142,7 +142,9 @@
   padding: 28px 32px;
   margin: 24px auto 0 auto;
   background: #fafaff;
+  width: 600px;
   max-width: 90%;
+  min-width: 1000px;
   text-align: center;
   font-size: 1.15rem;
   color: #222;
@@ -151,4 +153,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.modal-box ol {
+  padding-left: 24px;
+}
+.modal-box ul {
+  padding-left: 32px;
+}
+.modal-box li {
+  margin-bottom: 6px;
+  text-align: left;
 }
