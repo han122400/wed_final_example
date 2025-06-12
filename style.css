@@ -7,20 +7,6 @@
     'Helvetica Neue', Arial, sans-serif;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  padding: 16px 0;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 80px auto 0;
-  /* height: calc(100% - 130px);  ← 이 줄 삭제 */
-  margin-top: 80px;
-  /* max-height: calc(100vh - 130px); ← 이 줄 삭제 */
-  /* overflow-y: auto; ← 필요 없다면 삭제 */
-  box-sizing: border-box;
-}
-
 .panel {
   border-radius: 12px;
 }
