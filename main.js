@@ -20,7 +20,7 @@ function Login() {
       window.location.href = 'signup.html'
     }
   }
-} // 테스트용 주석석
+}
 
 // 회원가입 처리 함수
 function Signup() {
