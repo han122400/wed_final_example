@@ -1,0 +1,78 @@
+/* =====================[ index.html 전용 스타일 ]===================== */
+/* 메인 레이아웃, 카드, 우측 패널 등 index.html에서만 쓰는 스타일 */
+
+/* 4. Question of the day */
+.question {
+  margin-bottom: 32px;
+}
+.question-label {
+  font-size: 20px;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+.left h1 {
+  font-size: 32px;
+}
+
+/* 5. 우측 카드 공통 - card 하나로 통일 */
+.card {
+  background-color: #111;
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+.card-content {
+  width: 100%;
+}
+.card h2,
+.card h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+.card p,
+.card span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+.card .btn {
+  margin-top: 8px;
+}
+.recommend {
+  width: 100%;
+}
+.recommend-item {
+  display: flex;
+  align-items: center;
+  background: none;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+  box-shadow: none;
+  margin: 0;
+}
+.recommend-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 12px;
+}
+.recommend-text {
+  padding: 0;
+}
+.recommend-text p {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.recommend-text span {
+  font-size: 13px;
+  opacity: 0.7;
+}
