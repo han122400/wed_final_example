@@ -128,4 +128,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 300)
     })
   }
+
+  // 모달(자세히보기) 열고 닫기 기능
+
+  document.querySelectorAll('.detail-btn').forEach((btn) => {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation()
+      const modalId = this.getAttribute('data-modal')
+      const modal = document.getElementById(modalId)
+      if (modal) modal.classList.add('active')
+    })
+  })
+
+  document.querySelectorAll('.modal').forEach((modal) => {
+    // X 버튼 클릭 시 닫기
+    modal.querySelector('.close-btn').addEventListener('click', function () {
+      modal.classList.remove('active')
+    })
+    // 바깥쪽 클릭 시 닫기
+    modal.addEventListener('mousedown', function (e) {
+      if (e.target === modal) {
+        modal.classList.remove('active')
+      }
+    })
+  })
 })
