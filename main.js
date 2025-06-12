@@ -118,14 +118,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const t1 = document.getElementById('typing1')
     const t2 = document.getElementById('typing2')
     const t3 = document.getElementById('typing3')
-    typeWriter(t1, '기말', 120, () => {
-      setTimeout(() => {
-        typeWriter(t2, 'CMD 팀플 페이지.', 80, () => {
-          setTimeout(() => {
-            typeWriter(t3, 'A+ 받아야지', 80)
-          }, 300)
-        })
-      }, 300)
+    // 첫 줄: 팀명 + 로고
+    t1.style.fontSize = '70px'
+    t1.style.fontWeight = 'bold'
+    t1.style.display = 'inline-block'
+    t1.innerHTML = ''
+    typeWriter(t1, '팀명: C.M.D', 100, () => {
+      // 로고 이미지를 바로 오른쪽에 추가
+      const logo = document.createElement('img')
+      logo.src = 'img/teamlogo.png'
+      logo.alt = 'CMD 로고'
+      logo.style.height = '200px'
+      logo.style.width = '200px'
+      logo.style.verticalAlign = 'middle'
+      logo.style.marginLeft = '18px'
+      t1.appendChild(logo)
+      // 두 번째 줄: 주제
+      t2.style.fontSize = '50px'
+      t2.style.fontWeight = '600'
+      t2.style.marginTop = '18px'
+      t2.innerHTML = ''
+      typeWriter(t2, '주제: What is AI?', 80, () => {
+        // 세 번째 줄: 주제 설명
+        t3.style.fontSize = '30px'
+        t3.style.fontWeight = '500'
+        t3.style.marginTop = '18px'
+        t3.innerHTML = ''
+        typeWriter(
+          t3,
+          '- Deep Learning AI와 그와 관련된 AI 소개(생성형 AI, 이미지 인식 기반 AI)',
+          40,
+          () => {
+            // 네 번째 줄: AI 서비스 활용 방식 (바로 아래에 붙게)
+            const explain = document.createElement('div')
+            explain.style.fontSize = '20px'
+            explain.style.fontWeight = '400'
+            explain.style.marginTop = '150px'
+            explain.innerHTML =
+              'AI 서비스 활용 방식: 저희는 AI 서비스로 chatgpt를 사용하여 코드 오류 검사 및 기능 구현을 위해 필요한 함수 서치에 활용하였습니다.'
+            t3.parentNode.appendChild(explain)
+          }
+        )
+      })
     })
   }
 

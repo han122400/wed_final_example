@@ -12,7 +12,7 @@
 }
 .left {
   flex: 3;
-  background-color: rgb(36, 36, 36);
+  background-color: rgba(17, 17, 17, 0.959);
   padding: 32px;
   position: relative;
 }
