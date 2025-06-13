@@ -62,7 +62,7 @@ function locate_Login() {
   window.location.href = 'login.html'
 }
 
-// 1) 타입라이터 함수
+// 타입라이터 함수
 function typeWriter(el, text, speed, callback) {
   let i = 0
   el.textContent = ''
@@ -76,7 +76,6 @@ function typeWriter(el, text, speed, callback) {
   }, speed)
 }
 
-// 2) DOMContentLoaded 에서 타이핑 + 네비게이션 로직 실행
 document.addEventListener('DOMContentLoaded', () => {
   // index.html에서만 로그인 상태에 따라 우측 카드 텍스트 변경
   if (
@@ -109,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 타이핑 이펙트 (index.html 본문에서만 동작하도록 보장)
+  // 타이핑 이펙트
   if (
     document.getElementById('typing1') &&
     document.getElementById('typing2') &&
@@ -149,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
           '- Deep Learning AI와 그와 관련된 AI 소개(생성형 AI, 이미지 인식 기반 AI)',
           40,
           () => {
-            // 네 번째 줄: AI 서비스 활용 방식 (바로 아래에 붙게)
+            // 네 번째 줄: AI 서비스 활용 방식
             const explain = document.createElement('div')
             explain.style.fontSize = '20px'
             explain.style.fontWeight = '400'
@@ -163,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  // 모달(자세히보기) 열고 닫기 기능
+  // 모달(팝업창) 열고 닫기 기능
 
   document.querySelectorAll('.detail-btn').forEach((btn) => {
     btn.addEventListener('click', function (e) {

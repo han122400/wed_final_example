@@ -25,6 +25,7 @@
   color: #fff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
+/* 로그인 박스 설정 */
 input[type='text'],
 input[type='password'] {
   width: 100%;
@@ -38,6 +39,7 @@ input[type='password'] {
   margin-bottom: 2px;
   transition: border 0.2s;
 }
+/* 아이디, 비번 치는 곳 클릭시 색깔 변하게 하는거 */
 input[type='text']:focus,
 input[type='password']:focus {
   border: 1.5px solid #7b5cff;
@@ -58,6 +60,8 @@ input[type='password']:focus {
 .login-btn:hover {
   background: linear-gradient(90deg, #3d227b 0%, #7b5cff 100%);
 }
+
+/* 회원 가입 하는 부분이나 페이지 이동 부분 여백 */
 .login-form a,
 a {
   display: block;

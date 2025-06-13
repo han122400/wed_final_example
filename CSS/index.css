@@ -1,25 +1,13 @@
 /* =====================[ index.html 전용 스타일 ]===================== */
 /* 메인 레이아웃, 카드, 우측 패널 등 index.html에서만 쓰는 스타일 */
 
-/* 4. Question of the day */
-.question {
-  margin-bottom: 32px;
-}
-.question-label {
-  font-size: 20px;
-  opacity: 0.8;
-  margin-bottom: 8px;
-}
-.left h1 {
-  font-size: 32px;
-}
-
 /* 카드 컴포넌트 스타일 (로그인 카드 제외) */
 .card.right-skill-card:not(:first-child) {
   position: relative;
   display: block;
   overflow: hidden;
 }
+/* 자세히 보기 버튼 블러 처리 하는 부분 코드 */
 .card.right-skill-card:not(:first-child)::after {
   content: '';
   display: block;
@@ -35,6 +23,7 @@
 .card.right-skill-card:not(:first-child):hover::after {
   opacity: 1;
 }
+/* 자세히 보기 버튼 위치랑 숨기기 */
 .card.right-skill-card:not(:first-child) .detail-btn {
   display: none;
   position: absolute;
@@ -45,7 +34,7 @@
   background: rgba(255, 255, 255, 0.7);
   color: #3d227b9f;
   border: none;
-  border-radius: 20px;
+  border-radius: 200px;
   font-size: 1.1rem;
   font-weight: 600;
   padding: 12px 32px;
@@ -73,7 +62,7 @@
   }
 }
 
-/* 모달 스타일 */
+/* 팝업창(모달) 스타일 */
 .modal {
   display: none;
   position: fixed;
@@ -105,6 +94,7 @@
   align-items: center;
   overflow-y: auto;
 }
+/* 닫기 버튼 */
 .close-btn {
   position: absolute;
   top: 18px;
@@ -117,6 +107,7 @@
 .close-btn:hover {
   color: #3d227b;
 }
+/*팝업창 안에 있는 이미지 */
 .modal-img {
   width: 500px;
   height: 200px;

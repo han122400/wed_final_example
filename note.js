@@ -2,20 +2,20 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   // 로그인 체크 및 사용자명 표시
-  var loginUser = sessionStorage.getItem('loginUser')
+  var loginUser = sessionStorage.getItem('loginUser') // 세션스토리지에 저장되어 있는 로그인 정보 확인
   if (!loginUser) {
-    alert('로그인 후 이용해주세요')
+    alert('로그인 후 이용해주세요') // 안내 메시지 출력
     window.location.href = 'login.html'
     return
   }
-  var h1 = document.querySelector('.question h1')
+  var h1 = document.querySelector('.question h1') // question h1을 불러옴
   if (h1) {
-    h1.textContent = loginUser + '님의 다이어리 TODO 리스트'
+    h1.textContent = loginUser + '님의 다이어리 TODO 리스트' // 로그인 유저의 아이디 명과 문구를 함께 출력
   }
 
   // 1. 달력 렌더링
   var calendar = document.getElementById('diary-calendar')
-  var today = new Date()
+  var today = new Date() // 달력의 현재 날짜, 월의 시작/끝, 시간 기록에 사용하기 위해 사용한 Date 객체
   var selectedDate = null
 
   function renderCalendar(year, month) {
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 요일 헤더
     var weekDays = ['일', '월', '화', '수', '목', '금', '토']
     weekDays.forEach(function (d, i) {
+      // forEach 반복문을 통해 달력 날짜, 요일, TODO 리스트 등을 순회하며 DOM을 생성함
       var wd = document.createElement('div')
       wd.textContent = d
       wd.style.fontWeight = 'bold'
@@ -54,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var dateStr = year + '-' + monthStr + '-' + dayStr
       day.dataset.date = dateStr
       day.addEventListener('click', function () {
+        // 이벤트 리스너를 통해 클릭시 팝업창을 띄움
         openTodoModal(this.dataset.date, this)
       })
       calendar.appendChild(day)
@@ -160,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
       delBtn.title = '삭제'
       delBtn.onclick = function () {
         if (confirm('삭제하시겠습니까?')) {
+          //삭제시 확인창을 띄움
           todos.splice(idx, 1)
           saveTodos(todos)
           renderTodoList()
