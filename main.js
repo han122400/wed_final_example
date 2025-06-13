@@ -48,16 +48,6 @@ function Logout() {
   }
 }
 
-//회원 탈퇴
-function Delete() {
-  if (confirm('정말 회원탈퇴를 진행하시겠습니까?')) {
-    localStorage.clear()
-    sessionStorage.clear()
-    alert('회원탈퇴가 완료되었습니다.')
-    window.location.href = 'signup.html'
-  }
-}
-
 function locate_Login() {
   window.location.href = 'login.html'
 }
