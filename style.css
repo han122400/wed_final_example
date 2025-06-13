@@ -45,8 +45,9 @@ html {
   overflow-y: auto;
 }
 
-/* 5. 우측 카드 공통 - card 하나로 통일 */
+/* 우측 카드 공통  */
 .card {
+  /* 카드 디자인 */
   background-color: #111;
   border-radius: 12px;
   padding: 24px;
@@ -74,38 +75,6 @@ html {
 }
 .card .btn {
   margin-top: 8px;
-}
-.recommend {
-  width: 100%;
-}
-.recommend-item {
-  display: flex;
-  align-items: center;
-  background: none;
-  border-radius: 8px;
-  text-decoration: none;
-  color: inherit;
-  padding: 0;
-  box-shadow: none;
-  margin: 0;
-}
-.recommend-item img {
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-right: 12px;
-}
-.recommend-text {
-  padding: 0;
-}
-.recommend-text p {
-  font-size: 15px;
-  margin-bottom: 5px;
-}
-.recommend-text span {
-  font-size: 13px;
-  opacity: 0.7;
 }
 
 /* =====================[ 내비게이션 공통 스타일 ]===================== */
