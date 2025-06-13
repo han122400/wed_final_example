@@ -4,7 +4,8 @@
   display: block;
   overflow: hidden;
 }
-/* 자세히 보기 버튼 블러 처리 하는 부분 코드 */
+
+/* 블러 효과 */
 .card.right-skill-card:not(:first-child)::after {
   content: '';
   display: block;
@@ -20,11 +21,12 @@
 .card.right-skill-card:not(:first-child):hover::after {
   opacity: 1;
 }
-/* 자세히 보기 버튼 위치랑 숨기기 */
-.card.right-skill-card:not(:first-child) .detail-btn {
+
+/* 자세히보기 버튼 스타일 (중간고사 카드 제외) */
+.card.right-skill-card:not(:first-child):not(.middle-exam-card) .detail-btn {
   display: none;
   position: absolute;
-  left: 50%;
+  left: 50%; /* 정중앙 */
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -38,15 +40,67 @@
   box-shadow: 0 2px 8px rgba(81, 57, 138, 0.08);
   transition: background 0.2s, color 0.2s;
 }
-.card.right-skill-card:not(:first-child):hover .detail-btn {
+
+/* 중간고사 카드의 자세히보기 버튼 스타일 */
+.card.right-skill-card.middle-exam-card .detail-btn {
+  display: none;
+  position: absolute;
+  left: 30%; /* 기존 위치 유지 */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.7);
+  color: #3d227b9f;
+  border: none;
+  border-radius: 200px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 32px;
+  box-shadow: 0 2px 8px rgba(81, 57, 138, 0.08);
+  transition: background 0.2s, color 0.2s;
+}
+
+/* 페이지 이동 링크 스타일 (중간고사 카드 전용) */
+.card.right-skill-card.middle-exam-card .nav-btn {
+  display: none;
+  position: absolute;
+  left: 70%; /* 기존 위치 유지 */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.7);
+  color: #3d227b9f;
+  border: none;
+  border-radius: 200px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 32px;
+  box-shadow: 0 2px 8px rgba(81, 57, 138, 0.08);
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* 호버 시 버튼/링크 표시 */
+.card.right-skill-card:not(:first-child):hover .detail-btn,
+.card.right-skill-card:not(:first-child):hover .nav-btn {
   display: block;
 }
+
+/* 버튼/링크 호버 효과 */
 .card.right-skill-card:not(:first-child) .detail-btn:hover {
   background: #6547a9;
   color: #fff;
 }
+.card.right-skill-card:not(:first-child) .nav-btn:hover {
+  background: #6547a9;
+  color: #fff;
+}
+
+/* 모바일 반응형 디자인 */
 @media (max-width: 600px) {
-  .card.right-skill-card:not(:first-child) .detail-btn {
+  .card.right-skill-card:not(:first-child) .detail-btn,
+  .card.right-skill-card:not(:first-child) .nav-btn {
     position: static;
     left: unset;
     top: unset;
@@ -54,8 +108,16 @@
     margin: 12px auto 0 auto;
     display: none;
   }
-  .card.right-skill-card:not(:first-child):hover .detail-btn {
+  .card.right-skill-card:not(:first-child):hover .detail-btn,
+  .card.right-skill-card:not(:first-child):hover .nav-btn {
     display: block;
+  }
+  /* 모바일에서 버튼/링크 세로 배치 */
+  .card.right-skill-card:not(:first-child) .detail-btn {
+    margin-top: 12px;
+  }
+  .card.right-skill-card:not(:first-child) .nav-btn {
+    margin-top: 8px;
   }
 }
 
@@ -104,7 +166,7 @@
 .close-btn:hover {
   color: #3d227b;
 }
-/*팝업창 안에 있는 이미지 */
+/* 팝업창 안에 있는 이미지 */
 .modal-img {
   width: 500px;
   height: 200px;
@@ -124,6 +186,7 @@
   margin: 80px auto;
   box-sizing: border-box;
 }
+
 .modal-box {
   border: 2px solid #bdbdbd;
   border-radius: 16px;
@@ -132,7 +195,7 @@
   background: #fafaff;
   width: 600px;
   max-width: 90%;
-  min-width: 1000px;
+  min-width: auto;
   text-align: center;
   font-size: 1.15rem;
   color: #222;
@@ -142,6 +205,17 @@
   align-items: center;
   justify-content: center;
 }
+
+/* 모달 박스 내 이미지 스타일 */
+.modal-box-img {
+  width: 90%;
+  max-width: 900px;
+  max-height: 600px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
 .modal-box ol {
   padding-left: 24px;
 }
