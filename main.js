@@ -9,7 +9,7 @@ function Login() {
     var user = JSON.parse(saveUser)
     if (user.password == password) {
       sessionStorage.setItem('loginUser', userID)
-      alert('로그인 성공!')
+      alert('로그인 성공!') // alert로 창 출력
       window.location.href = 'index.html'
     } else {
       alert('비밀번호가 틀렸습니다.')

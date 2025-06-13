@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     h1.textContent = loginUser + '님의 다이어리 TODO 리스트' // 로그인 유저의 아이디 명과 문구를 함께 출력
   }
 
-  // 1. 달력 렌더링
+  // 달력 렌더링
   var calendar = document.getElementById('diary-calendar')
   var today = new Date() // 달력의 현재 날짜, 월의 시작/끝, 시간 기록에 사용하기 위해 사용한 Date 객체
   var selectedDate = null
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // 2. TODO 모달 열기/닫기
+  // TODO 모달 열기/닫기
   var todoModal = document.getElementById('todo-modal')
   var selectedDateSpan = document.getElementById('selected-date')
   var closeModalBtn = document.getElementById('close-modal')
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (lastSelectedDay) lastSelectedDay.classList.remove('selected')
   }
 
-  // 3. TODO 리스트 렌더링 및 기능
+  // TODO 리스트 렌더링 및 기능
   var todoForm = document.getElementById('todo-form')
   var todoInput = document.getElementById('todo-input')
   var todoList = document.getElementById('todo-list')
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
       todoList.appendChild(li)
     })
   }
-  // 4. TODO 추가
+  //  TODO 추가
   todoForm.onsubmit = function (e) {
     e.preventDefault()
     var text = todoInput.value.trim()
@@ -190,6 +190,6 @@ document.addEventListener('DOMContentLoaded', function () {
     renderTodoList()
   }
 
-  // 5. 초기 렌더링
+  // 초기 렌더링
   renderCalendar(today.getFullYear(), today.getMonth())
 })

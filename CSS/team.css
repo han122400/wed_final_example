@@ -1,4 +1,3 @@
-/* =====================[ team.html 전용 스타일 ]===================== */
 /* 팀 카드 부분 각 카드 별 거리 설정 */
 .team-section {
   display: grid;
@@ -155,7 +154,7 @@
   box-sizing: border-box;
 }
 
-/* 팀 카드 슬라이드업 애니메이션 정의 및 순차 지연 */
+/* 팀 카드 슬라이드업 애니메이션 설정 및 순차 지연 */
 @keyframes slideUp {
   from {
     opacity: 0;
